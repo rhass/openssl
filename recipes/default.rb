@@ -17,3 +17,6 @@
 # limitations under the License.
 #
 
+chef_gem 'certificate_authority' do
+  action :install
+end

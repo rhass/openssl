@@ -6,4 +6,9 @@ description      "Provides a library with a method for generating secure random 
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "1.1.0"
 
-recipe "openssl", "Empty, this cookbook provides a library and a set of LWRPs see README.md"
+recipe "openssl", "Installs the certificate_authority RubyGem."
+
+# Depend on chef_gem for versions prior to Chef 11.
+#unless node['chef_packages']['chef']['version'].match('^11..*')
+depends 'chef_gem'
+#end
